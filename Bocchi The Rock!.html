@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>孤獨搖滾 - 首頁</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Helvetica Neue', sans-serif;
+    }
+
+    #bg-video {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: -1;
+    }
+
+    .topbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 40px;
+      background: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(8px);
+      z-index: 10;
+    }
+
+    .topbar-logo {
+      height: 40px;
+      width: auto;
+    }
+
+    .topbar-links {
+      display: flex;
+      gap: 30px;
+    }
+
+    .topbar a {
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      color: #333;
+      transition: transform 0.3s ease;
+    }
+
+    .topbar a:hover {
+      transform: scale(1.15);
+      color: #ff77aa;
+    }
+
+    .line {
+      position: absolute;
+      top: 47%;
+      left: 49%;
+      width: 20px;
+      height: 2px;
+      background: white;
+      transform: translate(-50%, -50%);
+      animation: expand 1s forwards ,fadeOut 1s 1.8s forwards;
+    }
+
+    .line::before,
+    .line::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background: white;
+      left: 0;
+    }
+
+    .line::before {
+      top: 0;
+      animation: splitUp 1s 1s forwards;
+    }
+
+    .line::after {
+      top: 0;
+      animation: splitDown 1s 1s forwards;
+    }
+
+    @keyframes expand {
+      to { width: 500px; }
+    }
+
+    @keyframes splitUp {
+      to {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+    }
+
+    @keyframes splitDown {
+      to {
+        transform: translateY(50px);
+        opacity: 0;
+      }
+    }
+
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+    .logo-center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.8);
+      opacity: 0;
+      animation: logoFadeIn 1s 1.1s forwards;
+    }
+
+    @keyframes logoFadeIn {
+      to {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+      }
+    }
+
+    .logo-center img {
+      width: 500px;
+      max-width: 80vw;
+      height: auto;
+      filter: drop-shadow(0 4px 10px rgba(0,0,0,0.5));
+      transition: transform 0.3s ease;
+    }
+
+    .logo-center img:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+
+  <video id="bg-video" autoplay muted loop>
+    <source src="video/indexvideo.mp4" type="video/mp4">
+  </video>
+  <div class="overlay"></div>
+  <div class="topbar">
+    <img src="image/logo.webp" alt="Logo" class="topbar-logo">
+    <div class="topbar-links">
+    <a href="成員介紹.html">成員介紹</a>
+    <a href="作品年表.html">作品年表</a>
+    <a href="私心前五首.html">私心前五首</a>
+    </div>
+  </div>
+
+  <div class="line"></div>
+
+  <div class="logo-center">
+    <img src="image/images.png" alt="Logo">
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>樂團介紹</title>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url("image/樂團介紹.jpg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 0;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(8px);
+      display: flex;
+      justify-content: flex-end;
+      padding: 15px 40px;
+      z-index: 10;
+    }
+
+    .topbar a {
+      margin-left: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      color: #333;
+      transition: transform 0.3s ease;
+    }
+
+    .topbar a:hover {
+      transform: scale(1.15);
+      color: #ff77aa;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      padding: 60px 30px;
+      max-width: 700px;
+      margin: auto;
+      text-align: center;
+      color: white;
+      opacity: 0;
+      transition: opacity 0.8s ease;
+    }
+
+    h1 {
+      color: white;
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      opacity: 0;
+      transition: opacity 0.6s ease;
+    }
+
+    .page-title {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(1);
+      font-size: 3rem;
+      color: white;
+      font-weight: bold;
+      z-index: 100;
+      transition: transform 0.7s ease, opacity 0.5s ease;
+      pointer-events: none;
+    }
+
+    .member-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 15px 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(6px);
+      transition: transform 0.3s;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+    }
+
+    .member-name {
+      font-size: 18px;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .member-info {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease;
+      display: flex;
+      gap: 20px;
+      margin-top: 10px;
+      align-items: flex-start;
+    }
+
+    .member-info.open {
+      max-height: 500px;
+    }
+
+    .member-info img {
+      width: 100px;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+
+    .info-text {
+      font-size: 14px;
+      color: #eee;
+      text-align: left;
+    }
+
+    .info-text ul {
+      padding-left: 1.2em;
+      margin-top: 8px;
+    }
+
+    .info-text ul li {
+      margin-bottom: 4px;
+    }
+
+    @media (max-width: 600px) {
+      .member-info {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .member-info img {
+        margin-bottom: 10px;
+      }
+
+      .card {
+        padding: 15px;
+      }
+    }
+  </style>
+
+  <script defer>
+    function toggleInfo(index) {
+      document.querySelectorAll('.member-info').forEach((info, i) => {
+        if (i === index) {
+          info.classList.toggle('open');
+        } else {
+          info.classList.remove('open');
+        }
+      });
+    }
+
+    window.addEventListener("load", () => {
+      const pageTitle = document.getElementById("pageTitle");
+      const finalTitle = document.getElementById("finalTitle");
+      const content = document.querySelector(".content");
+
+      setTimeout(() => {
+        pageTitle.style.transform = "translate(-50%, -50%) scale(0.3)";
+        pageTitle.style.opacity = "0";
+      }, 1000);
+
+      setTimeout(() => {
+        pageTitle.style.display = "none";
+        finalTitle.style.opacity = "1";
+        content.style.opacity = "1";
+      }, 1700);
+    });
+  </script>
+</head>
+<body>
+  <div class="overlay"></div>
+
+  <div class="topbar">
+    <a href="Bocchi The Rock!.html">回首頁</a>
+    <a href="成員介紹.html">成員介紹</a>
+    <a href="作品年表.html">作品年表</a>
+    <a href="私心前五首.html">私心前五首</a>
+  </div>
+
+  <div class="page-title" id="pageTitle">結束樂團 成員介紹</div>
+
+  <div class="content">
+    <h1 id="finalTitle">結束樂團（結束バンド）成員介紹</h1>
+    <div class="member-grid">
+
+      <div class="card">
+        <div class="member-name" onclick="toggleInfo(0)">後藤一里（Bocchi）</div>
+        <div class="member-info">
+          <img src="image/波奇.jpg" alt="後藤一里">
+          <div class="info-text">
+            <p>結束樂團的主吉他手，雖然社恐但吉他技巧出眾。以網名「guitarhero」發表作品卻沒人知道她真實身份</p>
+            <ul>
+              <li><strong>年齡：</strong>15 歲</li>
+              <li><strong>生日：</strong>2月21日</li>
+              <li><strong>樂器：</strong>Gibson Les Paul Custom</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="member-name" onclick="toggleInfo(1)">伊地知虹夏</div>
+        <div class="member-info">
+          <img src="image/虹夏.jpg" alt="伊地知虹夏">
+          <div class="info-text">
+            <p>樂團的創始人兼鼓手，充滿活力與領導力，是把大家聚在一起的中心人物</p>
+            <ul>
+              <li><strong>年齡：</strong>15 歲</li>
+              <li><strong>生日：</strong>5月29日</li>
+              <li><strong>樂器：</strong>Yamaha Stage Custom 鼓組</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="member-name" onclick="toggleInfo(2)">山田涼</div>
+        <div class="member-info">
+          <img src="image/涼.jpg" alt="山田涼">
+          <div class="info-text">
+            <p>神秘冷酷的貝斯手，對音樂有獨到見解，行為脫線但其實內心溫柔</p>
+            <ul>
+              <li><strong>年齡：</strong>16 歲</li>
+              <li><strong>生日：</strong>9月18日</li>
+              <li><strong>樂器：</strong>Fender Jazz Bass</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="member-name" onclick="toggleInfo(3)">喜多郁代</div>
+        <div class="member-info">
+          <img src="image/喜多.jpg" alt="喜多郁代">
+          <div class="info-text">
+            <p>主唱與節奏吉他手，原本對音樂不熟悉但努力學習，是樂團的能量來源</p>
+            <ul>
+              <li><strong>年齡：</strong>15 歲</li>
+              <li><strong>生日：</strong>4月21日</li>
+              <li><strong>樂器：</strong>Fender Mustang（紅）</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

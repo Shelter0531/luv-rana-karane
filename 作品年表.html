@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>作品年表</title>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url(image/作品年表.jpg);
+      background-size: cover 60%;
+      background-position: center 15%;
+      background-attachment: fixed;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 0;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(8px);
+      display: flex;
+      justify-content: flex-end;
+      padding: 15px 40px;
+      z-index: 10;
+    }
+
+    .topbar a {
+      margin-left: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      color: #333;
+      transition: transform 0.3s ease;
+    }
+
+    .topbar a:hover {
+      transform: scale(1.15);
+      color: #ff77aa;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      padding: 60px 30px;
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+      color: white;
+      opacity: 0;
+      transition: opacity 0.8s ease;
+    }
+
+    h1 {
+      color: white;
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      opacity: 0;
+      transition: opacity 0.6s ease;
+    }
+
+    .timeline-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 20px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+      text-align: left;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .card h3 {
+      color: #fff;
+      margin-bottom: 8px;
+      font-size: 20px;
+    }
+
+    .card .date {
+      font-size: 14px;
+      color: #ccc;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 15px;
+      color: #eee;
+    }
+
+    .page-title {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(1);
+      font-size: 3rem;
+      color: white;
+      font-weight: bold;
+      z-index: 100;
+      transition: transform 0.7s ease, opacity 0.5s ease;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+
+  <div class="topbar">
+    <a href="Bocchi The Rock!.html">回首頁</a>
+    <a href="成員介紹.html">成員介紹</a>
+    <a href="作品年表.html">作品年表</a>
+    <a href="私心前五首.html">私心前五首</a>
+  </div>
+
+  <div class="page-title" id="pageTitle">結束樂團 作品年表</div>
+
+  <div class="content" id="mainContent">
+    <h1 id="finalTitle">結束樂團 作品年表</h1>
+    <div class="timeline-grid">
+
+      <div class="card">
+        <h3>漫畫開始連載</h3>
+        <div class="date">2018年12月</div>
+        <p>漫畫《ぼっち・ざ・ろっく！》由濱路晶於芳文社《Manga Time Kirara MAX》上開始連載</p>
+      </div>
+
+      <div class="card">
+        <h3>動畫製作確定</h3>
+        <div class="date">2021年2月</div>
+        <p>官方宣布動畫化製作，由 CloverWorks 負責動畫製作</p>
+      </div>
+
+      <div class="card">
+        <h3>動畫播出</h3>
+        <div class="date">2022年10月</div>
+        <p>TV動畫於日本正式播出，引發廣大迴響，動畫OP與角色聲優演出也引爆關注</p>
+      </div>
+
+      <div class="card">
+        <h3>劇場版動畫製作確定</h3>
+        <div class="date">2023年5月21日</div>
+        <p>官方於直播活動中宣布將製作劇場版動畫《結束樂團 The Movie》，為動畫總集篇</p>
+      </div>
+
+      <div class="card">
+        <h3>台灣電影上映</h3>
+        <div class="date">2024年6月21日</div>
+        <p>由木棉花代理上映《結束樂團》劇場版前篇《Re:》，於台灣電影院同步上映</p>
+      </div>
+
+      <div class="card">
+        <h3>第二期動畫製作確定</h3>
+        <div class="date">2024年12月</div>
+        <p>官方於活動「結束LIVE」中宣布續作動畫製作確定，引爆粉絲期待</p>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    window.addEventListener("load", () => {
+      const pageTitle = document.getElementById("pageTitle");
+      const finalTitle = document.getElementById("finalTitle");
+      const content = document.getElementById("mainContent");
+
+      setTimeout(() => {
+        pageTitle.style.transform = "translate(-50%, -50%) scale(0.3)";
+        pageTitle.style.opacity = "0";
+      }, 1000);
+
+      setTimeout(() => {
+        pageTitle.style.display = "none";
+        finalTitle.style.opacity = "1";
+        content.style.opacity = "1";
+      }, 1700);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>私心前五首</title>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url(image/1316133.jpeg);
+      background-size: auto 100%;
+      background-position: center 40%;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(8px);
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 15px 40px;
+      z-index: 10;
+    }
+
+    .topbar a {
+      margin-left: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      color: #333;
+      transition: transform 0.3s ease;
+    }
+
+    .topbar a:hover {
+      transform: scale(1.15);
+      color: #ff77aa;
+    }
+
+    .content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 30px 20px;
+      text-align: center;
+      z-index: 1;
+      position: relative;
+    }
+
+    .album-grid {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: nowrap;
+      overflow: visible;
+      padding-bottom: 30px;
+      scrollbar-width: none;
+      position: relative;
+      z-index: 1;
+    }
+
+    .album-grid::-webkit-scrollbar {
+      display: none;
+    }
+
+    .album {
+      width: 220px;
+      text-align: center;
+      position: relative;
+      overflow: visible;
+      flex-shrink: 0;
+      z-index: 2;
+    }
+
+    .album img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+      position: relative;
+    }
+
+    .album img:hover {
+      transform: scale(1.1);
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 99;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    }
+
+    .album-title {
+      margin-top: 12px;
+      font-weight: bold;
+      color: white;
+      font-size: 16px;
+      text-decoration: none;
+    }
+
+    .note {
+      text-align: center;
+      font-size: 14px;
+      color: white;
+      font-style: italic;
+      padding: 20px;
+      z-index: 1;
+      position: relative;
+    }
+
+    @media (max-width: 600px) {
+      .album {
+        width: 70%;
+      }
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+  <div class="topbar">
+    <a href="Bocchi The Rock!.html">回首頁</a>
+    <a href="成員介紹.html">成員介紹</a>
+    <a href="作品年表.html">作品年表</a>
+    <a href="私心前五首.html">私心前五首</a>
+  </div>
+
+  <div class="content">
+    <div class="album-grid">
+      <a class="album" href="https://www.youtube.com/watch?v=B7BxrAAXl94" target="_blank">
+        <img src="image/孤獨與吉他與藍色星球.jpg" alt="專輯1">
+        <div class="album-title">ギターと孤独と蒼い惑星</div>
+      </a>
+      <a class="album" href="https://www.youtube.com/watch?v=wSTbdqo-j74" target="_blank">
+        <img src="image/想成為星座.jpg" alt="專輯2">
+        <div class="album-title">星座になれたら</div>
+      </a>
+      <a class="album" href="https://www.youtube.com/watch?v=gX9m-rCtSqc" target="_blank">
+        <img src="image/絕不會忘記.jpg" alt="專輯3">
+        <div class="album-title">忘れてやらない</div>
+      </a>
+      <a class="album" href="https://www.youtube.com/watch?v=UlCjySjkblI" target="_blank">
+        <img src="image/秒針少女.jpg" alt="專輯4">
+        <div class="album-title">秒針少女</div>
+      </a>
+      <a class="album" href="https://www.youtube.com/watch?v=Yd8kUoB72xU" target="_blank">
+        <img src="image/孤獨搖滾.png" alt="專輯5">
+        <div class="album-title">青春コンプレックス</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="note">點擊圖片跳轉 YouTube</div>
+</body>
+</html>
